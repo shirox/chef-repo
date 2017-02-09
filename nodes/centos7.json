@@ -1,0 +1,41 @@
+{
+  "name": "centos7",
+  "normal": {
+    "knife_zero": {
+      "host": "centos/7"
+    },
+    "fqdn": "centos/7",
+    "tags": [
+
+    ]
+  },
+  "automatic": {
+    "os": "linux",
+    "os_version": "3.10.0-514.2.2.el7.x86_64",
+    "hostname": "localhost",
+    "ipaddress": "10.0.2.15",
+    "roles": [
+
+    ],
+    "recipes": [
+      "common",
+      "common::default"
+    ],
+    "platform": "centos",
+    "platform_version": "7.3.1611",
+    "cloud_v2": null,
+    "chef_packages": {
+      "chef": {
+        "version": "12.18.31",
+        "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/chef-12.18.31/lib"
+      },
+      "ohai": {
+        "version": "8.22.1",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/ohai-8.22.1/lib/ohai"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[common]"
+  ]
+}
