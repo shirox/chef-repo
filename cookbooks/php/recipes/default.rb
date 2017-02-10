@@ -6,3 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+package "php php-mbstring php-mysql uuid-php" do
+  action :install
+end
+
+include_recipe "php::composer"
