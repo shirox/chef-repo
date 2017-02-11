@@ -36,6 +36,11 @@
     }
   },
   "run_list": [
-    "recipe[common]"
+      "recipe[common::resolv_conf]",
+      "recipe[common]",
+      "recipe[mysql]",
+      "recipe[php]",
+      "recipe[php::composer]",
+      "recipe[httpd]"
   ]
 }

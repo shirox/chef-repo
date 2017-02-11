@@ -10,7 +10,6 @@ knife[:automatic_attribute_whitelist] = %w[
   ipaddress
   roles
   recipes
-  ipaddress
   platform
   platform_version
   cloud

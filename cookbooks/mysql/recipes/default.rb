@@ -7,8 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package "mysql mysql-server" do
-  action :install
+%w{mysql mysql-server}.each do |pkg|
+  package pkg do
+    action :install
+  end
 end
 
 service "mysqld" do

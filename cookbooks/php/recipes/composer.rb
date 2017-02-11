@@ -8,4 +8,3 @@ end
 execute "composer install" do
   command "php #{composer_setup_file}/composer-setup.php --install-dir=/usr/local/bin --filename=composer"
 end
-
