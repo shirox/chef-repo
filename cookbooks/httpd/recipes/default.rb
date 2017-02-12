@@ -7,6 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+package "centos-release-scl-rh" do
+  action :install
+end
+
 package "httpd24" do
   action :install
 end
@@ -18,7 +22,7 @@ end
 #  mode "0644"
 #end
 
-service "httpd" do
+service "httpd24-httpd" do
   supports :status => true, :restart => true
   action [:enable, :start]
 end

@@ -7,10 +7,18 @@
 # All rights reserved - Do Not Redistribute
 #
 
-%w{rh-mysql57 rh-mysql57-mysql-server}.each do |pkg|
-  package pkg do
-    action :install
-  end
+remote_file "#{Chef::Config[:file_cache_path]}/mysql57-community-release-el6-8.noarch.rpm" do
+  source "http://dev.mysql.com/get/mysql57-community-release-el6-8.noarch.rpm"
+end
+
+package "mysql57-community-release-el6-8.noarch.rpm" do
+  action :install
+  provider Chef::Provider::Package::Rpm
+  source "#{Chef::Config[:file_cache_path]}/mysql57-community-release-el6-8.noarch.rpm"
+end
+
+package "mysql-community-server" do
+  action :install
 end
 
 service "mysqld" do

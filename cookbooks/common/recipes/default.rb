@@ -15,9 +15,9 @@
 #  action :install
 #end
 
-package "centos-release-SCL" do
-  action :install
-end
+#package "centos-release-scl-rh" do
+#  action :install
+#end
 
 #package "python-pip" do
 #  action :install

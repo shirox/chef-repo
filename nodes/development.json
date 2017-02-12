@@ -1,0 +1,57 @@
+{
+  "name": "development",
+  "normal": {
+    "knife_zero": {
+      "host": "centos/6"
+    },
+    "fqdn": "centos/6",
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "mysql": {
+      "root_password": "{MYSQL_ROOT_PASSWORD}"
+    }
+  },
+  "automatic": {
+    "os": "linux",
+    "os_version": "2.6.32-642.11.1.el6.x86_64",
+    "hostname": "localhost",
+    "ipaddress": "10.0.2.15",
+    "roles": [
+
+    ],
+    "recipes": [
+      "common::resolv_conf",
+      "common",
+      "common::default",
+      "mysql",
+      "mysql::default",
+      "php",
+      "php::default",
+      "httpd",
+      "httpd::default"
+    ],
+    "platform": "centos",
+    "platform_version": "6.8",
+    "cloud_v2": null,
+    "chef_packages": {
+      "chef": {
+        "version": "12.18.31",
+        "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/chef-12.18.31/lib"
+      },
+      "ohai": {
+        "version": "8.22.1",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/ohai-8.22.1/lib/ohai"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[common::resolv_conf]",
+    "recipe[common]",
+    "recipe[mysql]",
+    "recipe[php]",
+    "recipe[httpd]"
+  ]
+}
