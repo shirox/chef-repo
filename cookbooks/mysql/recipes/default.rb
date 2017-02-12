@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-%w{mysql mysql-server}.each do |pkg|
+%w{rh-mysql57 rh-mysql57-mysql-server}.each do |pkg|
   package pkg do
     action :install
   end

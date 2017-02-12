@@ -11,10 +11,14 @@
 #  action :install
 #end
 
-package "epel-release" do
+#package "epel-release" do
+#  action :install
+#end
+
+package "centos-release-SCL" do
   action :install
 end
 
-package "python-pip" do
-  action :install
-end
+#package "python-pip" do
+#  action :install
+#end
