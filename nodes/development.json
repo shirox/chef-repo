@@ -11,7 +11,7 @@
   },
   "default": {
     "mysql": {
-      "root_password": "{MYSQL_ROOT_PASSWORD}"
+      "root_password": ""
     }
   },
   "automatic": {
@@ -24,14 +24,9 @@
     ],
     "recipes": [
       "common::resolv_conf",
-      "common",
-      "common::default",
-      "mysql",
-      "mysql::default",
-      "php",
-      "php::default",
-      "httpd",
-      "httpd::default"
+      "mysql::centos6",
+      "php::centos6",
+      "httpd::centos6"
     ],
     "platform": "centos",
     "platform_version": "6.8",
@@ -49,9 +44,8 @@
   },
   "run_list": [
     "recipe[common::resolv_conf]",
-    "recipe[common]",
-    "recipe[mysql]",
-    "recipe[php]",
-    "recipe[httpd]"
+    "recipe[mysql::centos6]",
+    "recipe[php::centos6]",
+    "recipe[httpd::centos6]"
   ]
 }
