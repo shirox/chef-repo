@@ -19,6 +19,7 @@ end
 
 # install mysql community server
 yum_package "mysql-community-server" do
+  version "5.6.35-2.el6"
   action :install
 end
 

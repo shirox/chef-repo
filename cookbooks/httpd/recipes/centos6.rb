@@ -12,6 +12,7 @@ package "centos-release-scl-rh" do
 end
 
 package "httpd24" do
+  version "1.1-14.el6"
   action :install
 end
 
