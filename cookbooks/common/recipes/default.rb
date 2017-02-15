@@ -6,3 +6,14 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+package "git" do
+  action :install
+end
+
+template "/root/.ssh/config" do
+  source "ssh_config.erb"
+  owner "root"
+  group "root"
+  mode "0600"
+end
