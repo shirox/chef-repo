@@ -1,0 +1,50 @@
+{
+  "name": "my-amazonlinux",
+  "normal": {
+    "knife_zero": {
+      "host": "my-amazonlinux"
+    },
+    "fqdn": "my-amazonlinux",
+    "tags": [
+
+    ]
+  },
+  "automatic": {
+    "os": "linux",
+    "os_version": "4.9.8-moby",
+    "hostname": "d7fd12a7ae1a",
+    "ipaddress": "172.17.0.2",
+    "roles": [
+
+    ],
+    "recipes": [
+      "common",
+      "common::amazonlinux",
+      "mysql::amazonlinux",
+      "httpd::amazonlinux",
+      "php::amazonlinux",
+      "la5test"
+    ],
+    "platform": "amazon",
+    "platform_version": "2016.09",
+    "cloud_v2": null,
+    "chef_packages": {
+      "chef": {
+        "version": "12.18.31",
+        "chef_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/chef-12.18.31/lib"
+      },
+      "ohai": {
+        "version": "8.22.1",
+        "ohai_root": "/opt/chef/embedded/lib/ruby/gems/2.3.0/gems/ohai-8.22.1/lib/ohai"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[common]",
+    "recipe[common::amazonlinux]",
+    "recipe[mysql::amazonlinux]",
+    "recipe[httpd::amazonlinux]",
+    "recipe[php::amazonlinux]",
+    "recipe[la5test]"
+  ]
+}
