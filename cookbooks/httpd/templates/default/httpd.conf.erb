@@ -1,0 +1,87 @@
+ServerRoot "/etc/httpd"
+Listen 80
+
+Include conf.modules.d/*.conf
+
+User apache
+Group apache
+
+ServerAdmin root@localhost
+ServerName localhost
+
+<Directory />
+    AllowOverride none
+    Require all denied
+</Directory>
+
+<Directory "/var/www">
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<Directory "/var/www/*">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<IfModule dir_module>
+    DirectoryIndex index.html index.php
+</IfModule>
+
+<Files ".ht*">
+    Require all denied
+</Files>
+
+LogLevel warn
+
+<IfModule log_config_module>
+
+    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+    LogFormat "%h %l %u %t \"%r\" %>s %b" common
+
+    <IfModule logio_module>
+      LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
+    </IfModule>
+
+</IfModule>
+
+<IfModule alias_module>
+    ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
+</IfModule>
+
+<Directory "/var/www/cgi-bin">
+    AllowOverride None
+    Options None
+    Require all granted
+</Directory>
+
+<IfModule mime_module>
+    TypesConfig /etc/mime.types
+    #AddType application/x-gzip .tgz
+    #AddEncoding x-compress .Z
+    #AddEncoding x-gzip .gz .tgz
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
+    #AddHandler cgi-script .cgi
+    #AddHandler type-map var
+    AddType text/html .shtml
+    AddOutputFilter INCLUDES .shtml
+</IfModule>
+
+AddDefaultCharset UTF-8
+
+<IfModule mime_magic_module>
+    MIMEMagicFile conf/magic
+</IfModule>
+
+#ErrorDocument 500 "The server made a boo boo."
+#ErrorDocument 404 /missing.html
+#ErrorDocument 404 "/cgi-bin/missing_handler.pl"
+#ErrorDocument 402 http://www.example.com/subscription_info.html
+
+#EnableMMAP off
+EnableSendfile on
+
+IncludeOptional conf.d/*.conf
+

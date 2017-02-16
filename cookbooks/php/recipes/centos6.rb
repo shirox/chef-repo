@@ -22,12 +22,12 @@ package "remi-release-6.rpm" do
   source "#{Chef::Config[:file_cache_path]}/remi-release-6.rpm"
 end
 
-package "php70" do
-  version "1.0-5.el6.remi"
+package "php56" do
+  version "2.1-5.el6.remi"
   action :install
 end
 
-%w{php70-php-mbstring php70-php-mysqlnd}.each do |pkg|
+%w{php56-php-mbstring php56-php-mysqlnd}.each do |pkg|
   package pkg do
     action :install
   end

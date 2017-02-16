@@ -27,8 +27,8 @@
       "common",
       "common::default",
       "mysql::centos6",
-      "php::centos6",
       "httpd::centos6",
+      "php::centos6",
       "la5test",
       "la5test::default"
     ],
@@ -50,8 +50,8 @@
     "recipe[common::resolv_conf]",
     "recipe[common]",
     "recipe[mysql::centos6]",
-    "recipe[php::centos6]",
     "recipe[httpd::centos6]",
+    "recipe[php::centos6]",
     "recipe[la5test]"
   ]
 }
