@@ -12,7 +12,7 @@
   "automatic": {
     "os": "linux",
     "os_version": "4.9.8-moby",
-    "hostname": "d7fd12a7ae1a",
+    "hostname": "b9b21dc5525c",
     "ipaddress": "172.17.0.2",
     "roles": [
 

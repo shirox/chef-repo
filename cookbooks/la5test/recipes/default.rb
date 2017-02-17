@@ -13,3 +13,7 @@ deploy "la5test" do
   deploy_to "/var/www/la5test"
   action :deploy
 end
+
+service "httpd" do
+  action :restart
+end
